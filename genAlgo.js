@@ -1,4 +1,19 @@
+/*
 
+
+###########################################################################
+|--------------------------------------------------------------------------
+
+  Genetic algorithm Project
+
+  1. Evolve generations of chromosones to produce the the goal text.
+  2. Find optimum population size (brute force for now)
+
+|--------------------------------------------------------------------------
+###########################################################################
+
+
+*/
 
 class Chromosome {
     constructor (code = '') {
@@ -150,7 +165,7 @@ class Population {
 
 class OptimumPopulationSize {
 
-    constructor(maxGeneration = 20, repeatNumber = 2) {
+    constructor(maxGeneration = 20, repeatNumber = 10) {
         this.maxGeneration = maxGeneration;
         this.repeatNumber = repeatNumber;
         this.previousGen = [];
@@ -215,9 +230,9 @@ class OptimumPopulationSize {
         *****
         OptimumPopulationSize execution time: ${Date.now() - now}ms`);
 
-        }
-
     }
 
-    const popSize = new OptimumPopulationSize(100, 20);
-    popSize.runPop();
+}
+
+const popSize = new OptimumPopulationSize();
+popSize.runPop();
